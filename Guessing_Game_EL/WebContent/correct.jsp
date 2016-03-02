@@ -6,19 +6,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Guessing Game - MVC Version</title>
+<title>Guessing Game - Expression Version</title>
 </head>
 <body>
-<H1>Guessing Game - MVC Version</h1>
+<H1>Guessing Game - Expression Version</h1>
 
-
+<p>
 
 Message: ${msg["msg"]}
 
+</p>
+
 <p>
-<a href=guess.jsp>
-  Play Again
-</a>
+${guesses.value <= est ? "Your score was better than average":"Needs some work, your score was
+ higher than average"}
+ 
+</p>
+
+
+
+<p>
+<a href=guess.jsp> Play Again</a>
+</p>
+
+
+<p> 
+User-Agent: ${header["user-agent"]}
 </p>
 </body>
 </html>
