@@ -13,25 +13,24 @@
 
 <p>
 
-Message: ${msg["msg"]}
+<span>Message:</span> ${msg["msg"]}
 
 </p>
 
 <p>
-${guesses.value <= est ? "Your score was better than average":"Needs some work, your score was
+<span> EST:</span> ${guesses.value <= est["10"] ? "Your score was better than average":"Needs some work, your score was
  higher than average"}
- 
 </p>
 
 
 
 <p>
-<a href=guess.jsp> Play Again</a>
+<a href=guess.jsp >  Play Again</a>
 </p>
 
 
 <p> 
-User-Agent: ${header["user-agent"]}
+<span> User-Agent:</span> ${header["user-agent"]}
 </p>
 </body>
 </html>

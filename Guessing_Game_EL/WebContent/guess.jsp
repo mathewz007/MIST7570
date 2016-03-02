@@ -13,23 +13,26 @@
   <h1>Guessing Game- Expression Version</h1>
   
   <p>
-  <b>Please choose a number between 0 and 1000.</b> <span>Chose carefully!</span>
+  <b>Please choose a number between</b> <span>Chose carefully!</span>
    </p>
   <p>
-  Message: ${msg["msg"]}
+ <span> Message:</span> ${msg["msg"]}
   </p>
   
   <form name="guessForm" action="doGuess" method="get">
      <label>
-        Guess: ${sessionScope.guesses.value}
+     <span> Guess:</span> ${sessionScope.guesses.value}
      </label>
      <input type="text" name="guess" /><br />
      <input type="submit" name="submit" value="Make Guess">
      
   </form>
   <p>
-User-Agent: ${header["user-agent"]}
+<span> User-Agent:</span> ${header["user-agent"]}
 </p>
 
+
+
+<span> For test purposes target : ${target.value} </span>
 </body>
 </html>

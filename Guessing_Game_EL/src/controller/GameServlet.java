@@ -40,7 +40,7 @@ public class GameServlet extends HttpServlet {
         private int maximum; 
         private GameNumber target; 
 private Message msg; 
-        
+private String est;
         
         
     /** 
@@ -90,10 +90,11 @@ private Message msg;
                      guesses = new GameNumber(1);                          
  
     msg=(Message) session.getAttribute("msg"); 
+    
  
     
  // set up HashMaps
-    Map<String, String> est= new HashMap<String,String>();
+    Map<String, String> est = new HashMap<String,String>();
          est.put("10", "2.5") ;  
          est.put("50", "5") ; 
          est.put("100", "6") ;   
@@ -101,15 +102,16 @@ private Message msg;
          est.put("1000", "9") ; 
          est.put("10000", "11") ; 
          est.put("10000", "12") ; 
- //get map values 
-         est = new HashMap<String, String>();
+         
     
     // set session Attributes
     session.setAttribute("target", target); 
-        session.setAttribute("minimum", minimum); 
+    session.setAttribute("minimum", minimum); 
     session.setAttribute("maximum", maximum); 
   session.setAttribute("guesses", guesses);
   session.setAttribute("est", est);              
+  
+  
                 // initialize output 
        
             Message msg =new Message("msg"); 
@@ -134,7 +136,7 @@ private Message msg;
             
            // setting the msg 
            request.setAttribute("msg", msg); 
-        
+      
 
           
            // send control to the next component 
