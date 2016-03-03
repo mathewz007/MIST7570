@@ -40,7 +40,7 @@ public class GameServlet extends HttpServlet {
         private int maximum; 
         private GameNumber target; 
 private Message msg; 
-private String est;
+
         
         
     /** 
@@ -94,15 +94,11 @@ private String est;
  
     
  // set up HashMaps
-    Map<String, String> est = new HashMap<String,String>();
-         est.put("10", "2.5") ;  
-         est.put("50", "5") ; 
-         est.put("100", "6") ;   
-         est.put("500", "8") ;    
-         est.put("1000", "9") ; 
-         est.put("10000", "11") ; 
-         est.put("10000", "12") ; 
+    Map<Integer, Double> est = new HashMap<Integer,Double>();
+         est.put(10, 2.5) ;  
          
+         
+     
     
     // set session Attributes
     session.setAttribute("target", target); 

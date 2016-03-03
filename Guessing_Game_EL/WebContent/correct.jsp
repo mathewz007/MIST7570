@@ -20,6 +20,8 @@
 <p>
 <span> EST:</span> ${guesses.value <= est["10"] ? "Your score was better than average":"Needs some work, your score was
  higher than average"}
+ 
+ 
 </p>
 
 
