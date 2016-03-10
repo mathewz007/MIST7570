@@ -18,7 +18,7 @@
 <h1>Welcome to the War Card Game! </h1>
 
 <p>
-The War has begun  wins the first battle!
+TIE BREAKER
 </p>
 
 </div>
@@ -27,6 +27,10 @@ The War has begun  wins the first battle!
 <div id ="left">
 <p>
 <img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player1Card}.png"/>
+<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p1WarCard1}.png"/>
+<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p1WarCard2}.png"/>
+<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p1WarCard3}.png"/>
+<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p1WarCard4}.png"/>
 </p>
 
 <p>
@@ -42,8 +46,12 @@ The War has begun  wins the first battle!
 
 <div id ="right">
 <p>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player2Card}.png">
-</p>
+
+<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player2Card}.png"/>
+<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p2WarCard1}.png"/>
+<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p2WarCard2}.png"/>
+<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p2WarCard3}.png"/>
+<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p2WarCard4}.png"/></p>
 <p>
 
  <b> ${sessionScope.player2Name}</b>
@@ -53,6 +61,8 @@ The War has begun  wins the first battle!
 <em> Score:</em> ${sessionScope.player2Score} 
 </p>
 
+
+
 </div>
 
 
@@ -60,8 +70,7 @@ The War has begun  wins the first battle!
 	<form  name="guessForm" action="doBattle" method="get">
 	<div id = "footer">
      <p>
-    <input type="submit" name="submit" value= "Next Deal!">
-    
+     <input type="submit" name="submit" value= "NextDeal!">
      </p>
 </div>
      

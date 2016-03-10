@@ -24,6 +24,7 @@ public class Deck implements Serializable {
 	public Deck() {
 		this.cards = new ArrayList<Card>();
 		this.hasJokers = false;
+		System.out.println("Deck Ready");
 	}
 	
 	/**
@@ -132,12 +133,21 @@ public class Deck implements Serializable {
 		return cards.get(index);
 	}
 
+	// adds a card 
+	
+	public void addCard(Card card) {
+        cards.add(card);
+    }
+	
+	
 	/**
 	 * @param index
 	 * removes a card at a given location of the deck
+	 * @return 
 	 */	
-	public void removeCard(int index){
-		cards.remove(index);
+	public Card removeCard(int index){
+		Card cardtoReturn = cards.remove(index);
+		return cardtoReturn;
 	}
 	
 	/**
@@ -168,7 +178,7 @@ public class Deck implements Serializable {
 		String suit = "";
 		String deckString = "12S,5D,10S,1S,3C,3D,12D,10D,7S,6C,8S,9D,11D,7C,13S,13H,1C,8D,7H,11H,2C,9H,9S,9C,6S,2H,6D,2S,5C,3H,10C,5H,7D,4C,2D,10H,8C,13C,1D,12C,11S,4H,12H,6H,1H,8H,4D,4S,11C,5S,3S,13D,";
 		String[] cards = deckString.split(",");
-		// 
+
 		for (int i=0; i<cards.length; i++){
 			// get suit off of each card string in the array
 			int l = cards[i].length();
@@ -193,4 +203,16 @@ public class Deck implements Serializable {
 			System.out.println(c.getCardString());
 		}
 	}
+
+	public Card removeCard() {
+		// TODO Auto-generated method stub
+		if(cards.size() > 0)
+		return  cards.remove(cards.size() -1);
+		else
+			return null;
+	}
+    
 }
+	
+	
+

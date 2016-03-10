@@ -18,7 +18,7 @@
 <h1>Welcome to the War Card Game! </h1>
 
 <p>
-The War has begun  wins the first battle!
+AAh StaleMate Lets go to War!!
 </p>
 
 </div>
@@ -53,6 +53,8 @@ The War has begun  wins the first battle!
 <em> Score:</em> ${sessionScope.player2Score} 
 </p>
 
+
+
 </div>
 
 
@@ -60,8 +62,7 @@ The War has begun  wins the first battle!
 	<form  name="guessForm" action="doBattle" method="get">
 	<div id = "footer">
      <p>
-    <input type="submit" name="submit" value= "Next Deal!">
-    
+     <input type="submit" name="submit" value= "Break Tie!">
      </p>
 </div>
      

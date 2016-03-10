@@ -17,51 +17,32 @@
 
 <h1>Welcome to the War Card Game! </h1>
 
-<p>
-The War has begun  wins the first battle!
-</p>
+</div>
 
+<div id= "center">
+<p>
+
+Congratulations ${winner} Today was a great day ! Today you won!
+
+</p>
+<p>
+
+<em> ${player1Name }</em> ${player1Score} 
+
+<em>${player2Name }</em> ${player2Score} 
+
+</p>
 </div>
 
 
-<div id ="left">
-<p>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player1Card}.png"/>
-</p>
 
-<p>
-
- <b> ${sessionScope.player1Name}</b>
-</p>
-<p>
-<em> Score:</em> ${sessionScope.player1Score} 
-</p>
-
-</div>
-
-
-<div id ="right">
-<p>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player2Card}.png">
-</p>
-<p>
-
- <b> ${sessionScope.player2Name}</b>
-</p>
-
-<p>
-<em> Score:</em> ${sessionScope.player2Score} 
-</p>
-
-</div>
 
 
 
 	<form  name="guessForm" action="doBattle" method="get">
 	<div id = "footer">
      <p>
-    <input type="submit" name="submit" value= "Next Deal!">
-    
+     <input type="submit" name="submit" value= "Play Again!">
      </p>
 </div>
      
