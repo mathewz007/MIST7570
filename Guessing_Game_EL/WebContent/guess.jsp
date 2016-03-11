@@ -13,7 +13,7 @@
   <h1>Guessing Game- Expression Version</h1>
   
   <p>
-  <b>Please choose a number between</b> <span>Chose carefully!</span>
+  <b>Please choose a number between o and 1000 </b> <span>Chose carefully!</span>
    </p>
   <p>
  <span> Message:</span> ${msg["msg"]}
@@ -21,7 +21,7 @@
   
   <form name="guessForm" action="doGuess" method="get">
      <label>
-     <span> Guess:</span> ${sessionScope.guesses.value}
+     <span> Guess: </span> ${sessionScope.guesses.value}
      </label>
      <input type="text" name="guess" /><br />
      <input type="submit" name="submit" value="Make Guess">

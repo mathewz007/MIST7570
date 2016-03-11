@@ -18,7 +18,7 @@
 <h1>Welcome to the War Card Game! </h1>
 
 <p>
-The War has begun  wins the first battle!
+The War has begun ${winner} wins the battle!
 </p>
 
 </div>
@@ -26,9 +26,9 @@ The War has begun  wins the first battle!
 
 <div id ="left">
 <p>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player1Card}.png"/>
+<img class ="card-image" src= "classic-cards/${player1Card}.png"/>
 </p>
-
+Cards Left: ${player1CardsLeft }
 <p>
 
  <b> ${sessionScope.player1Name}</b>
@@ -42,8 +42,9 @@ The War has begun  wins the first battle!
 
 <div id ="right">
 <p>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player2Card}.png">
+<img class ="card-image" src= "classic-cards/${player2Card}.png">
 </p>
+Cards Left: ${player2CardsLeft }
 <p>
 
  <b> ${sessionScope.player2Name}</b>
@@ -60,8 +61,12 @@ The War has begun  wins the first battle!
 	<form  name="guessForm" action="doBattle" method="get">
 	<div id = "footer">
      <p>
+     <%boolean isWar=((Boolean) session.getAttribute("isWar")).booleanValue(); 
+     if(isWar){ %>
+    <input type="submit" name="submit" value= "Break Tie!">
+    <%} else {%>
     <input type="submit" name="submit" value= "Next Deal!">
-    
+    <%} %>
      </p>
 </div>
      

@@ -26,11 +26,14 @@ TIE BREAKER
 
 <div id ="left">
 <p>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player1Card}.png"/>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p1WarCard1}.png"/>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p1WarCard2}.png"/>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p1WarCard3}.png"/>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p1WarCard4}.png"/>
+<img class ="card-image" src= "classic-cards/${player1Card}.png"/>
+<%
+Deck p1WarDeck = (Deck) session.getAttribute("p1WarDeck");
+for(int i=0;i<p1WarDeck.getCardsLeft();i++)
+{
+%>
+<img class ="card-image" src= "classic-cards/<%=p1WarDeck.getCard(i).toString() %>.png"/>
+<%} %>
 </p>
 
 <p>
@@ -47,11 +50,15 @@ TIE BREAKER
 <div id ="right">
 <p>
 
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player2Card}.png"/>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p2WarCard1}.png"/>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p2WarCard2}.png"/>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p2WarCard3}.png"/>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${p2WarCard4}.png"/></p>
+<img class ="card-image" src= "classic-cards/${player2Card}.png"/>
+<%
+Deck p2WarDeck = (Deck) session.getAttribute("p2WarDeck");
+for(int i=0;i<p2WarDeck.getCardsLeft();i++)
+{
+%>
+<img class ="card-image" src= "classic-cards/<%=p2WarDeck.getCard(i).toString() %>.png"/>
+<%} %>
+</p>
 <p>
 
  <b> ${sessionScope.player2Name}</b>

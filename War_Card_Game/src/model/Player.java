@@ -6,13 +6,15 @@ public class Player implements Serializable  {
 	private Deck deck;
 	private int score;
 	private String name;
-	private boolean winner;
+	private boolean dealWinner;
+	private boolean gameWinner;
 	
 	public Player(String name){
 		setScore (0);
 		this.name=name;
 		deck = new Deck();
-		setWinner(false);
+		setDealWinner(false);
+		setGameWinner(false);
 	}
 
 	public Player (Deck deck){
@@ -76,19 +78,23 @@ public class Player implements Serializable  {
 		this.name = name;
 	}
 
-	/**
-	 * @return the winner
-	 */
-	public boolean isWinner() {
-		return winner;
+	public boolean isGameWinner() {
+		return gameWinner;
 	}
 
-	/**
-	 * @param winner the winner to set
-	 */
-	public void setWinner(boolean winner) {
-		this.winner = winner;
+	public void setGameWinner(boolean gameWinner) {
+		this.gameWinner = gameWinner;
 	}
+
+	public boolean isDealWinner() {
+		return dealWinner;
+	}
+
+	public void setDealWinner(boolean dealWinner) {
+		this.dealWinner = dealWinner;
+	}
+
+
 
 	
 	

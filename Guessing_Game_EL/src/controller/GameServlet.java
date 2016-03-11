@@ -28,7 +28,7 @@ import model.Message;
                 initParams ={ 
                         @WebInitParam(name= "guesses", value = "1", description= "initial guess"), 
                         @WebInitParam(name= "minimum", value = "0", description= "minimum value"), 
-                        @WebInitParam(name= "maximum", value = "10", description= "maximum value"), 
+                        @WebInitParam(name= "maximum", value = "1000", description= "maximum value"), 
                         
         }
                 ) 
@@ -40,7 +40,7 @@ public class GameServlet extends HttpServlet {
         private int maximum; 
         private GameNumber target; 
 private Message msg; 
-
+private boolean newGame;;
         
         
     /** 
@@ -59,9 +59,10 @@ private Message msg;
             this.minimum =Integer.parseInt(config.getInitParameter("minimum")); 
             this.maximum =Integer.parseInt(config.getInitParameter("maximum")); 
             this.guesses = new GameNumber(tempGuesses); 
-            target = new GameNumber(); 
+          //  target = new GameNumber(); 
             // calling gameNumber target 
-            target.setRandom(minimum,maximum); 
+          //  target.setRandom(minimum,maximum); 
+          newGame();
              } 
     
     
@@ -94,13 +95,19 @@ private Message msg;
  
     
  // set up HashMaps
-    Map<Integer, Double> est = new HashMap<Integer,Double>();
-         est.put(10, 2.5) ;  
-         
+    Map<String,Double> est = new HashMap<>();
+         est.put("10", 2.5) ;  
+         est.put("50", 5.0) ;  
+         est.put("100", 6.0) ;  
+         est.put("500", 8.0) ;  
+         est.put("1000", 9.0) ;  
+         est.put("5000", 11.0) ;  
+         est.put("10000", 12.0) ;  
          
      
     
     // set session Attributes
+         
     session.setAttribute("target", target); 
     session.setAttribute("minimum", minimum); 
     session.setAttribute("maximum", maximum); 
@@ -112,13 +119,20 @@ private Message msg;
        
             Message msg =new Message("msg"); 
                 String url = "/guess.jsp"; 
+              
                 
                 // compare the guess with the target 
+                
+                
            if(guess.getValue() == target.getValue() ){ 
                    // winner 
                    msg.setMsg("Correct! You got it in "+ guesses.getValue() + " guesses."); 
                    url = "/correct.jsp"; 
-                             } else { 
+                   newGame();
+                   guesses = new GameNumber(1);
+                   session.setAttribute("guesses", guesses);
+                             } 
+           else { 
                    // next guess 
                    guesses.increment();
                    if (guess.getValue() < target.getValue() ) { 
@@ -138,8 +152,16 @@ private Message msg;
            // send control to the next component 
            RequestDispatcher dispatcher = request.getRequestDispatcher(url); 
            dispatcher.forward(request, response); 
-                
-          
-        } 
 
+          
+        }
+
+private void newGame(){
+	target = new GameNumber(); 
+    target.setRandom(minimum,maximum); 
+    guesses = new GameNumber();
+    guesses.setValue(1);
+
+}
 } 
+

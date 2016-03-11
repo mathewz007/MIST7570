@@ -26,7 +26,7 @@ AAh StaleMate Lets go to War!!
 
 <div id ="left">
 <p>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player1Card}.png"/>
+<img class ="card-image" src= "classic-cards/${player1Card}.png"/>
 </p>
 
 <p>
@@ -42,7 +42,7 @@ AAh StaleMate Lets go to War!!
 
 <div id ="right">
 <p>
-<img class ="card-image" src= "http://localhost:8080/War_Card_Game/classic-cards/${player2Card}.png">
+<img class ="card-image" src= "classic-cards/${player2Card}.png">
 </p>
 <p>
 
@@ -59,7 +59,7 @@ AAh StaleMate Lets go to War!!
 
 
 
-	<form  name="guessForm" action="doBattle" method="get">
+	<form  name="guessForm" action="doTieBreak" method="get">
 	<div id = "footer">
      <p>
      <input type="submit" name="submit" value= "Break Tie!">

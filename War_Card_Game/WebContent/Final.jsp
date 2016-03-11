@@ -28,7 +28,8 @@ Congratulations ${winner} Today was a great day ! Today you won!
 <p>
 
 <em> ${player1Name }</em> ${player1Score} 
-
+</p>
+<p>
 <em>${player2Name }</em> ${player2Score} 
 
 </p>
