@@ -140,18 +140,6 @@ private Deck p1WarDeck, p2WarDeck;
 
 		}
 		
-		if(this.player1.isDealWinner())
-			session.setAttribute("winner",this.player1.getName());
-		else if(this.player2.isDealWinner())
-			session.setAttribute("winner",this.player2.getName());
-		else
-			session.setAttribute("winner", "No one");
-		// setting the session attribute 
-		session.setAttribute("player1Name", this.player1.getName());
-		session.setAttribute("player1Score", this.player1.getScore());
-		//System.out.println(this.player1.getName()+ ":"+player1CurrentCard);
-		session.setAttribute("player1Card", player1CurrentCard);
-
 
 
 		session.setAttribute("player2Name", this.player2.getName());
@@ -178,14 +166,7 @@ private Deck p1WarDeck, p2WarDeck;
 		//initialDeck.shuffleDeck();
 
 		initialDeck.stackDeck();
-		this.player1.setDealWinner(false);
-		this.player2.setDealWinner(false);
-		this.player1.setGameWinner(false);
-		this.player2.setGameWinner(false);
-		this.player1.setScore(0);
-		this.player2.setScore(0);
-		this.player1.clearDeck();
-		this.player2.clearDeck();
+	
 
 		while(initialDeck.getCardsLeft()>0)
 		{
