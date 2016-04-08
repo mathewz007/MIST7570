@@ -32,7 +32,8 @@ public class UpdateFormServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	this.doPost(request, response);
+	
+		this.doPost(request,response);
 	}
 
 	/**
@@ -41,17 +42,17 @@ public class UpdateFormServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//get product SKU 
 		
-				String sku = request.getParameter("sku");
+				String sku = request.getParameter("SKU");
 				
-				
+			
 				//create readRecord class
-				ReadRecord rr =new ReadRecord ("Grocery_Database","root","password","sku" ) ;
+				ReadRecord rr =new ReadRecord ("Grocery_Database","root","password", sku) ;
 				
 				
 				
 				//useReadRecord to get product
 				rr.doRead();
-				Product product =rr.getproduct();
+				Product product = rr.getproduct();
 				
 				
 				//pass book and control to the update form.jsp

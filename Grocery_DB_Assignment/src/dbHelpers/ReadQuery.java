@@ -60,7 +60,7 @@ public void doRead(){
 
 public String getHTMLTable(){
 String table ="";
-table +="<table border=1>";
+
 
 try {
 	while (this.results.next()){

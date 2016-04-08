@@ -13,8 +13,19 @@
 </head>
 <body>
 <h1>Grocery Table</h1>
+<table>
+<tr>
+<td> SKU</td>
+<td>Product Type</td>
+<td>Flavor</td>
+<td>Cost</td>
+<td>Price</td>
+<td>Quantity</td>
+</tr>
+
 
 <%= table %>
+ </table>
 <br/>
 <a href= add> Add a product</a>
 

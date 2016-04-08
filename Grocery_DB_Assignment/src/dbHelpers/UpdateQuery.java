@@ -32,17 +32,19 @@ private Connection connection;
 		}
 	}
 		 public void doUpdate(Product product){
-				String query ="update products set `SKU` =? ,`Product Type`= ?,`Flavor` = ?,`Cost` =?,`Price`= ?,`Quantity`= ? where SKU =?";
+				String query ="update products set `SKU` =? ,`Product Type`= ?,`Flavor` = ?,`Cost` =?,`Price`= ?,`Quantity`= ? where `SKU` =?";
 		
 				try {
 					
 					PreparedStatement ps= connection.prepareStatement(query);
+					
 					ps.setString(1, product.getSku());
 					ps.setString(2, product.getproducttype());
 					ps.setString(3, product.getFlavor());
 					ps.setDouble(4, product.getCost());
 					ps.setDouble(5, product.getPrice());
-					ps.setInt(6, product.getQuantity());
+					ps.setInt	(6, 	product.getQuantity());
+					ps.setString(7, product.getSku());
 					
 					ps.executeUpdate();
 					

@@ -44,8 +44,8 @@ public class UpdateProductServlet extends HttpServlet {
 				String sku = request.getParameter("sku");
 				String producttype = request.getParameter("producttype");
 				String flavor = request.getParameter("flavor");
-				Double cost = Double.parseDouble(request.getParameter("cost"));
-				Double price =Double.parseDouble(request.getParameter("price"));
+				double cost = Double.parseDouble(request.getParameter("cost"));
+				double price =Double.parseDouble(request.getParameter("price"));
 				int quantity = Integer.parseInt(request.getParameter("quantity"));
 				
 				
