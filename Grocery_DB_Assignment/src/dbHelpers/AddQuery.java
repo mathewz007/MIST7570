@@ -25,7 +25,7 @@ public class AddQuery {
 		 
 		 try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			this.connection= DriverManager.getConnection(url,uname,pwd);
+			this.connection = DriverManager.getConnection(url,uname,pwd);
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,12 +36,12 @@ public class AddQuery {
 // Query the DB to add products
 	
 	public void doAdd(Product product){
-		String query="insert into products(sku,producttype,flavor,cost,price,quantity) values (?,?,?,?,?)";
+		String query="insert into products(sku,producttype,flavor,cost,price,quantity) values (?, ?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement ps=connection.prepareStatement(query);
 			
-			ps.setString(1, product.getSku());
+			ps.setString(1,product.getSku());
 			ps.setString(2,product.getproducttype());
 			ps.setString(3,product.getFlavor());
 			ps.setDouble(4,product.getCost());

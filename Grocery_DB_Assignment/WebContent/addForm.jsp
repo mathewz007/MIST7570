@@ -11,6 +11,10 @@
 
 <form  name=addForm action=addproduct method=get>
 
+<label> SKU :</label>
+<input type = text name = sku value=""/>
+<br/>
+
 
 <label> Product Type :</label>
 <input type = text name = producttype value=""/>
