@@ -36,7 +36,7 @@ public class AddQuery {
 // Query the DB to add products
 	
 	public void doAdd(Product product){
-		String query="insert into products(sku,producttype,flavor,cost,price,quantity) values (?, ?, ?, ?, ?, ?)";
+		String query="insert into products(`SKU`,`Product Type`,`Flavor`,`Cost`,`Price`,`Quantity`) values (?, ?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement ps=connection.prepareStatement(query);

@@ -66,8 +66,8 @@ try {
 	while (this.results.next()){
 	Product product = new Product();
 	
-		product.setSku(this.results.getString("SKU"));
-		product.setproducttype(this.results.getString("Product Type"));
+		product.setSku(this.results.getString("sku"));
+		product.setproducttype(this.results.getString("producttype"));
 		product.setFlavor(this.results.getString("flavor"));
 		product.setCost(this.results.getInt("cost"));
 		product.setPrice(this.results.getInt("price"));
