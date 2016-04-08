@@ -41,7 +41,7 @@ public class AddServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the data
 		
-	
+		String sku =request.getParameter("sku");
 		String producttype =request.getParameter("producttype");
 		String flavor =request.getParameter("flavor");
 		Double cost =Double.parseDouble(request.getParameter("cost"));
@@ -51,7 +51,7 @@ public class AddServlet extends HttpServlet {
 		//create the product object 
 		
 		Product product = new Product();
-		
+		product.setSku(sku);
 		product.setproducttype(producttype);
 		product.setFlavor(flavor);
 		product.setCost(cost);
