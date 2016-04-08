@@ -67,10 +67,10 @@ try {
 	Product product = new Product();
 	
 		product.setSku(this.results.getString("sku"));
-		product.setproducttype(this.results.getString("producttype"));
+		product.setproducttype(this.results.getString("Product Type"));
 		product.setFlavor(this.results.getString("flavor"));
-		product.setCost(this.results.getInt("cost"));
-		product.setPrice(this.results.getInt("price"));
+		product.setCost(this.results.getDouble("cost"));
+		product.setPrice(this.results.getDouble("price"));
 		product.setQuantity(this.results.getInt("quantity"));
 		
 		

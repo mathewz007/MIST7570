@@ -42,7 +42,7 @@ public class ReadRecord {
 	}
 		
 		public void doRead(){
-			String query = "select * from products where SKU = ?";
+			String query = "select * from products where `SKU`=?";
 			
 		 try {
 			PreparedStatement ps = connection.prepareStatement(query);
@@ -52,16 +52,13 @@ public class ReadRecord {
 			
 			this.results.next();
 			
-		product.setSku(this.results.getString("sku"));
-		product.setproducttype(this.results.getString("producttype"));
-		product.setFlavor(this.results.getString("flavor"));
-		product.setCost(this.results.getDouble("cost"));
-		product.setPrice(this.results.getDouble("price"));
-		product.setQuantity(this.results.getInt("quantity"));
+		product.setSku(this.results.getString("SKU"));
+		product.setproducttype(this.results.getString("Product Type"));
+		product.setFlavor(this.results.getString("Flavor"));
+		product.setCost(this.results.getDouble("Cost"));
+		product.setPrice(this.results.getDouble("Price"));
+		product.setQuantity(this.results.getInt("Quantity"));
 			
-			
-			
-		
 	
 		 } catch (SQLException e) {
 				// TODO Auto-generated catch block

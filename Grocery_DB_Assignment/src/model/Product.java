@@ -37,9 +37,9 @@ public class Product {
 
 	public Product() {
 	
-		this.sku = "no sku";
-		this.producttype = "notype";
-		this.flavor = "no flavor";
+		this.sku = "nosku";
+		this.producttype = "no type";
+		this.flavor = "no falvor";
 		this.cost = 0;
 		this.price = 0;
 		this.quantity =0;
